@@ -5803,11 +5803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\project\\testApp\\testApp\\testApp.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\project\\CompanyEmployee\\testApp\\testApp\\testApp.csproj",
       "projectName": "testApp",
-      "projectPath": "C:\\Users\\User\\Desktop\\project\\testApp\\testApp\\testApp.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\project\\CompanyEmployee\\testApp\\testApp\\testApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\project\\testApp\\testApp\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\project\\CompanyEmployee\\testApp\\testApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

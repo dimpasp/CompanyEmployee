@@ -9,7 +9,7 @@ namespace testApp.Data
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Employer> Employer { get; set; }
+        public DbSet<Employee> Employee { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

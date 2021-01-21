@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testApp.Model
 {
-    public class Employer
+    public class Employee
     {
         /// <summary>
         /// 

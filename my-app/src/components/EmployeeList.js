@@ -4,7 +4,10 @@ import { DeleteEmployee, GetAllEmployee } from '../services/Employee';
 import { Button, Table  } from 'react-bootstrap';
 
 export default () => {
+    
     const employee = useSelector(state => state.actionsRedux.employee);
+
+     //hook του react-redux για να παρουμε την εκασθοτε αλλαγη που θελουμε
     const dispatch = useDispatch();
 
     useEffect(() => {

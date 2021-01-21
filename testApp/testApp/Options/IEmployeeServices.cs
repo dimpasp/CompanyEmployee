@@ -8,11 +8,11 @@ namespace testApp.Options
 {
     public interface IEmployeeServices
     {
-         Employer CreateEmployee(Employer employer);
-         Employer GetEmployee(int id);
+        Employee CreateEmployee(Employee employer);
+        Employee GetEmployee(int id);
 
-         List<Employer> GetAllEmployee();
+         List<Employee> GetAllEmployee();
         void DeleteEmployee(int id);
-        void EditEmployee(Employer employer);
+        void EditEmployee(Employee employer);
     }
 }

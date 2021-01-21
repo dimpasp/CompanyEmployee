@@ -15,30 +15,30 @@ namespace testApp.Options
             _context = context;
         }
 
-        public Employer CreateEmployee(Employer employer)
+        public Employee CreateEmployee(Employee employee)
         {
-            _context.Add(employer);
+            _context.Add(employee);
             _context.SaveChanges();
 
-            return employer;
+            return employee;
         }
-        public Employer GetEmployee(int id)
+        public Employee GetEmployee(int id)
         {
-            return _context.Employer.First(x => x.id == id);
+            return _context.Employee.First(x => x.id == id);
         }
-        public List<Employer> GetAllEmployee()
+        public List<Employee> GetAllEmployee()
         {
-            return _context.Employer.ToList();
+            return _context.Employee.ToList();
         }
         public void DeleteEmployee(int id)
         {
-            var employee = _context.Employer.First(x => x.id == id);
-            _context.Employer.Remove(employee);
+            var employee = _context.Employee.First(x => x.id == id);
+            _context.Employee.Remove(employee);
             _context.SaveChanges();
         }
-        public void EditEmployee(Employer employer)
+        public void EditEmployee(Employee employer)
         {
-            var editEmployer=_context.Employer.First(x => x.id == employer.id);
+            var editEmployer=_context.Employee.First(x => x.id == employer.id);
             editEmployer.firstName = employer.firstName;
             editEmployer.lastName = employer.lastName;
             editEmployer.Phone = employer.Phone;

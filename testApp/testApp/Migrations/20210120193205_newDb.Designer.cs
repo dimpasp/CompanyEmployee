@@ -9,8 +9,8 @@ using testApp.Data;
 namespace testApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210117145750_dbup")]
-    partial class dbup
+    [Migration("20210120193205_newDb")]
+    partial class newDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace testApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("testApp.Model.Employer", b =>
+            modelBuilder.Entity("testApp.Model.Employee", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace testApp.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Employer");
+                    b.ToTable("Employee");
                 });
 #pragma warning restore 612, 618
         }

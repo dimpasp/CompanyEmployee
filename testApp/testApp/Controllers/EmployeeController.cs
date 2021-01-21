@@ -26,9 +26,9 @@ namespace testApp.Controllers
 
 
         [HttpPost]
-        public IActionResult CreateEmployee(Employer employer)
+        public IActionResult CreateEmployee(Employee employee)
         {
-            var newEmployee = _employeeServices.CreateEmployee(employer);
+            var newEmployee = _employeeServices.CreateEmployee(employee);
             return Ok(newEmployee);
         }
 
@@ -56,9 +56,9 @@ namespace testApp.Controllers
 
 
         [HttpPut]
-        public IActionResult EditEmployee([FromBody] Employer employer)
+        public IActionResult EditEmployee([FromBody] Employee employee)
         {
-            _employeeServices.EditEmployee(employer);
+            _employeeServices.EditEmployee(employee);
             return Ok();
 
         }

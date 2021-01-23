@@ -44,7 +44,6 @@ export default ({ employee, setIsEditing }) => {
     const isValid = formValidation();
     if (isValid) {
       alert("Form submitted");
-      window.location.reload(false);
     } else {
       alert("FORM INVALID - DISPLAY ERROR MESSAGE")
     }
@@ -178,4 +177,3 @@ export default ({ employee, setIsEditing }) => {
     </Form>
   )
 }
-

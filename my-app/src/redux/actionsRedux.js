@@ -10,9 +10,9 @@ export const ActionTypes = {
 }
 
 export const ActionCreators = {
-    setEmployee: payload => ({ types: ActionTypes.SET_EMPLOYEE, payload }),
-    deleteEmployee: payload => ({ types: ActionTypes.DELETE_EMPLOYEE, payload }),
-    editEmployee: payload => ({ types: ActionTypes.EDIT_EMPLOYEE, payload }),
+    setEmployee: payload => ({ type: ActionTypes.SET_EMPLOYEE, payload }),
+    deleteEmployee: payload => ({ type: ActionTypes.DELETE_EMPLOYEE, payload }),
+    editEmployee: payload => ({ type: ActionTypes.EDIT_EMPLOYEE, payload }),
     newEmployee: payload => ({ types: ActionTypes.NEW_EMPLOYEE, payload }),
 
 }
@@ -20,6 +20,7 @@ export const ActionCreators = {
 export default function ActionsRedux(state = initialState, action) {
     switch (action.type) {
         case ActionTypes.SET_EMPLOYEE:
+            console.log(action)
             return { ...state, employee: [...action.payload] };
         case ActionTypes.DELETE_EMPLOYEE:
             for(let i=0;i<state.employee.length;i++){

@@ -55,7 +55,7 @@ namespace testApp.Controllers
         }
 
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult EditEmployee([FromBody] Employee employee)
         {
             _employeeServices.EditEmployee(employee);

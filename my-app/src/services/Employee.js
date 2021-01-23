@@ -8,9 +8,10 @@ const axiosInstance = axios.create({
 export const GetAllEmployee = async (dispatch) => {
     try {
         const { data } = await axiosInstance.get('/Employee');
+        console.log(data)
         dispatch(ActionCreators.setEmployee(data));
-    } catch {
-        console.log('something happen!!');
+    } catch (exception){
+        console.log(exception);
     }
 }
 

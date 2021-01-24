@@ -17,10 +17,10 @@ export const GetAllEmployee = async (dispatch) => {
 
 export const DeleteEmployee = async (dispatch, employee) => {
     try {
-        await axiosInstance.delete('/Employee/${id}');
+        await axiosInstance.delete(`/Employee/${employee.id}`);
         dispatch(ActionCreators.deleteEmployee(employee));
-    } catch {
-        console.log('something happen!!');
+    } catch (exception){
+        console.log(exception);
     }
 }
 
@@ -29,17 +29,17 @@ export const NewEmployee = async (dispatch, employee) => {
     try {
         const { data } = await axiosInstance.post('/Employee', employee);
         dispatch(ActionCreators.newEmployee(data));
-    } catch {
-        console.log('something happen!!');
+    } catch (exception){
+        console.log(exception);
     }
 }
 
 export const EditEmployee = async (dispatch, employee) => {
     try {
-        await axiosInstance.put('/Employee/${id}', employee);
+        await axiosInstance.put(`/Employee/${employee.id}`, employee);
         dispatch(ActionCreators.editEmployee(employee));
 
-    } catch {
-        console.log('something happen!!');
+    } catch (exception){
+        console.log(exception);
     }
 }

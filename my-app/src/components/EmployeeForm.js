@@ -47,8 +47,6 @@ export default ({ employee, setIsEditing }) => {
     } else {
       alert("FORM INVALID - DISPLAY ERROR MESSAGE")
     }
-
-
   }
 
   const [lastNameError, setlastNameError] = useState({});

@@ -19,6 +19,7 @@ class EditEmployee extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
       }
      
+      //περναμε μια προς μια τις τιμες στο object που εχουμε τραβηξει
       componentDidMount(id) {
         let eId = this.props.match.params.id;
         axios.get(`https://localhost:5001/Employee/${eId}`)
@@ -41,27 +42,16 @@ class EditEmployee extends Component {
 
 
 
+    //Σε αυτην την func κανουμε Update το object
       onSubmit(id, e){
         e.preventDefault();
         axios.put(`https://localhost:5001/Employee/${this.state.id}`, this.state)
           .then(response => {
             console.log(response);       
           }).catch(err => console.log(err));
-          this.props.history.push('/CourseForm'); 
       }
 
-  deleteRow(id, e){
-    let eId = this.props.match.params.id;
-    axios.delete(`https://localhost:5001/Employee/${eId}`)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-  
-      })
-  
-  }
-
- 
+//Με την setstate ανανεωνουμε της τημες της εκαστοτε μεταβλητης
   handleInputChange(e){
     const { name, value } = e.target;
     this.setState({
@@ -72,11 +62,12 @@ class EditEmployee extends Component {
 
   render(){
     return (
+      //ελεγχουμε αν εχει φορτωθει το object
         this.state?
      <div >
         <br />
        <h1 style={{textAlign:'center',marginTop:30 }}>Edit Employee</h1>
-       <form id="contact-form" onSubmit={(e)=>this.onSubmit(this.state.id,e)}>
+       <Form id="contact-form" onSubmit={(e)=>this.onSubmit(this.state.id,e)}>
           <Form.Group >
             <Form.Label> Name  </Form.Label>
             <Form.Control type="text" name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
@@ -95,11 +86,10 @@ class EditEmployee extends Component {
           </Form.Group>
           <Form.Group >
             <Form.Label> email  </Form.Label>
-            <Form.Control type="text" name="firstName" value={this.state.email} onChange={this.handleInputChange} />
+            <Form.Control type="text" name="email" value={this.state.email} onChange={this.handleInputChange} />
           </Form.Group>
-          <Button variant='primary' type='submit'>Add</Button>
-          <button className="btn btn-danger" style={{float: 'right'}} onClick={(e) => this.deleteRow(this.state.id, e)}>Delete</button>
-        </form>
+          <Button style={{ marginRight: '2px' }} variant='primary' type='submit'>Save</Button>
+        </Form>
       </div>: "loading" 
     )
   }

@@ -34,15 +34,15 @@ export default () => {
         </thead>
         <tbody>
             {employee.map(post =>
-            <tr>
+            <tr key={post.id}>
                 <td>{post.id}</td>
                 <td>{post.firstName}</td>
                 <td>{post.lastName}</td>
                 <td>{post.phone}</td>
                 <td>{post.address}</td>
                 <td>{post.email}</td>
-                <td><Link to={`/EmployeeDetails/${post.id}`}>
-              <Button color="success">Edit</Button></Link></td>                   
+                <td><Link to={`/EmployeeDetails/${post.id}`}><Button color="success">Edit</Button></Link></td>   
+                <td> <Button className='btn btn-danger' onClick={() => DeleteEmployee(dispatch, post)}>Delete</Button> </td>  
             </tr>
             )}
         </tbody>

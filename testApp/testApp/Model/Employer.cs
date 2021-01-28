@@ -24,14 +24,14 @@ namespace testApp.Model
         /// <summary>
         /// 
         /// </summary>
-        public string Phone { get; set; }
+        public string phone { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Address { get; set; }
+        public string address { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Email { get; set; }
+        public string email { get; set; }
     }
 }

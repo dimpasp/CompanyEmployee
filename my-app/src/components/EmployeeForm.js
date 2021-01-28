@@ -33,19 +33,20 @@ export default ({ employee, setIsEditing }) => {
 
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isNewEmployee) {
-      NewEmployee(dispatch, { lastName: lastName, firstName: firstName, email: email, address: address, phone: phone });
-    }
-    else {
-      EditEmployee(dispatch, { lastName: lastName, firstName: firstName, email: email, address: address, phone: phone });
-      setIsEditing(false);
-    }
     const isValid = formValidation();
     if (isValid) {
       alert("Form submitted");
+      e.preventDefault();
+      if (isNewEmployee) {
+        NewEmployee(dispatch, { lastName: lastName, firstName: firstName, email: email, address: address, phone: phone });
+      }
+      else {
+        EditEmployee(dispatch, { lastName: lastName, firstName: firstName, email: email, address: address, phone: phone });
+        setIsEditing(false);
+      }
     } else {
-      alert("FORM INVALID - DISPLAY ERROR MESSAGE")
+      alert("FORM INVALID - DISPLAY ERROR MESSAGE");
+     
     }
   }
 
@@ -54,8 +55,6 @@ export default ({ employee, setIsEditing }) => {
   const [emailError, setemailError] = useState({});
   const [addressError, setaddressError] = useState({});
   const [phoneError, setphoneError] = useState({});
-
-
 
   const formValidation = () => {
 
@@ -86,19 +85,17 @@ export default ({ employee, setIsEditing }) => {
       isValid = false;
     }
 
-
     if (!lastName.match(/^[a-zA-Z]+$/)) {
       lastNameError["lastName"] = "Last Name must have only letters";
       isValid = false;
     }
-
 
     //Email
     if (!email) {
       emailError["email"] = "Email cannot be empty";
       isValid = false;
     }
-
+   
     //Address
     if (address.trim().length < 1) {
       addressError["address"] = "Address cannot be empty";

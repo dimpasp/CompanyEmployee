@@ -41,9 +41,9 @@ namespace testApp.Options
             var editEmployer=_context.Employee.First(x => x.id == employer.id);
             editEmployer.firstName = employer.firstName;
             editEmployer.lastName = employer.lastName;
-            editEmployer.Phone = employer.Phone;
-            editEmployer.Email = employer.Email;
-            editEmployer.Address = employer.Address;
+            editEmployer.phone = employer.phone;
+            editEmployer.email = employer.email;
+            editEmployer.address = employer.address;
             _context.SaveChanges();
         }
     }
